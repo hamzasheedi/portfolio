@@ -16,7 +16,7 @@ export function NavigationItem({
   return (
     <li>
       <Link
-        className="finweb-header__nav-link"
+        className="MMQH-header__nav-link"
         href={href}
         aria-current={active ? "page" : undefined}
         onClick={onClick}

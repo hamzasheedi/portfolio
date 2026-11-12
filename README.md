@@ -1,4 +1,4 @@
-# FINWEB SOLUTION
+# MMQH SOLUTION
 
 A static-first international B2B website combining Financial Operations & Accounting with Digital Architecture & Web Development.
 

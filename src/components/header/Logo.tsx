@@ -7,12 +7,12 @@ interface LogoProps {
 export function Logo({ onClick }: LogoProps) {
   return (
     <Link
-      className="finweb-header__logo"
+      className="MMQH-header__logo"
       href="/"
-      aria-label="FINWEB home"
+      aria-label="MMQH home"
       onClick={onClick}
     >
-      FINWEB<span aria-hidden="true">.</span>
+      MMQH<span aria-hidden="true">.</span>
     </Link>
   );
 }

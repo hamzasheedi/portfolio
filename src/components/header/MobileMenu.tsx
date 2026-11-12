@@ -66,10 +66,10 @@ export function MobileMenu({
   const close = () => onOpenChange(false);
 
   return (
-    <div className="finweb-header__mobile-menu">
+    <div className="MMQH-header__mobile-menu">
       <button
         ref={triggerRef}
-        className="finweb-header__menu-trigger"
+        className="MMQH-header__menu-trigger"
         type="button"
         aria-label="Open navigation menu"
         aria-expanded={open}
@@ -80,12 +80,12 @@ export function MobileMenu({
       </button>
 
       <div
-        className="finweb-header__mobile-layer"
+        className="MMQH-header__mobile-layer"
         data-open={open}
         aria-hidden={!open}
       >
         <button
-          className="finweb-header__backdrop"
+          className="MMQH-header__backdrop"
           type="button"
           aria-label="Close navigation menu"
           tabIndex={open ? 0 : -1}
@@ -94,15 +94,15 @@ export function MobileMenu({
         <div
           ref={panelRef}
           id="mobile-navigation"
-          className="finweb-header__mobile-panel"
+          className="MMQH-header__mobile-panel"
           role="dialog"
           aria-modal="true"
           aria-label="Navigation menu"
         >
-          <div className="finweb-header__mobile-top">
+          <div className="MMQH-header__mobile-top">
             <Logo onClick={close} />
             <button
-              className="finweb-header__menu-trigger"
+              className="MMQH-header__menu-trigger"
               type="button"
               aria-label="Close navigation menu"
               onClick={close}
@@ -112,11 +112,11 @@ export function MobileMenu({
           </div>
           <Navigation
             pathname={pathname}
-            className="finweb-header__mobile-nav"
+            className="MMQH-header__mobile-nav"
             label="Mobile navigation"
             onNavigate={close}
           />
-          <div className="finweb-header__mobile-cta">
+          <div className="MMQH-header__mobile-cta">
             <CtaButton active={pathname === "/contact"} onClick={close} />
           </div>
         </div>

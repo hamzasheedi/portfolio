@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const key = "finweb-consent-v1";
+const key = "MMQH-consent-v1";
 export function ConsentBanner() {
   const [open, setOpen] = useState(false);
   useEffect(() => setOpen(!localStorage.getItem(key)), []);

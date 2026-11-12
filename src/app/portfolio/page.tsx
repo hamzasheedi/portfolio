@@ -38,72 +38,64 @@ import {
 export const metadata = {
   title: "Portfolio — Real Work in Financial Operations & Software Engineering",
   description:
-    "FINWEB's project portfolio: real financial consulting case studies and production-grade engineering projects spanning AI, automation, security, and data systems.",
+    "MMQH's project portfolio: real financial consulting case studies and production-grade engineering projects spanning AI, automation, security, and data systems.",
 };
 
 /* ─────────────────────────────────────────────────────────────────
-   HERO VISUAL — floating UI composition (aria-hidden)
+   HERO VISUAL — selected work collage (aria-hidden)
 ───────────────────────────────────────────────────────────────── */
 function PortfolioHeroVisual() {
   return (
     <div className="pf-hero-visual" aria-hidden="true">
 
-      {/* Financial dashboard card */}
-      <div className="pf-ui-card pf-ui-card--top">
+      {/* Financial case studies */}
+      <div className="pf-ui-card pf-ui-card--top pf-ui-card--accent">
         <div className="pf-ui-card-header">
           <span className="pf-ui-label">
-            <BarChart3 size={13} /> Cash Flow Projection
+            <Calculator size={13} /> Financial Case Studies
           </span>
-          <span className="pf-ui-badge pf-ui-badge--green">Live</span>
+          <span className="pf-ui-badge pf-ui-badge--green">Selected work</span>
         </div>
-        <div className="pf-ui-value">$284,500</div>
-        <div className="pf-ui-sub">Projected 90-day surplus · Construction</div>
-        <div className="pf-ui-bars">
-          {[55, 72, 48, 91, 63, 78, 95].map((h, i) => (
-            <div
-              key={i}
-              className={`pf-ui-bar${i === 6 ? " pf-ui-bar--hi" : ""}`}
-              style={{ height: `${h}%` }}
-            />
-          ))}
+        <div className="pf-ui-value pf-ui-value--sm">Financial Projection Dashboard</div>
+        <div className="pf-ui-sub">
+          QuickBooks Financial Statements · Bookkeeping Cleanup &amp; Catch-Up
         </div>
       </div>
 
-      {/* Two small metric cards */}
+      {/* Engineering project previews */}
       <div className="pf-ui-row">
-        <div className="pf-ui-card pf-ui-card--small pf-ui-card--accent">
+        <div className="pf-ui-card pf-ui-card--small">
           <div className="pf-ui-label">
-            <FileSpreadsheet size={12} /> P&amp;L Statement
+            <Brain size={12} /> AI Systems
           </div>
-          <div className="pf-ui-value pf-ui-value--sm">QuickBooks</div>
-          <div className="pf-ui-sub">Coaching · Setup complete</div>
+          <div className="pf-ui-value pf-ui-value--sm">AI &amp; Agent Engineering</div>
+          <div className="pf-ui-sub">Machine Learning Systems</div>
         </div>
         <div className="pf-ui-card pf-ui-card--small">
           <div className="pf-ui-label">
-            <Bot size={12} /> AI Agent
+            <Zap size={12} /> Automation Platforms
           </div>
-          <div className="pf-ui-value pf-ui-value--sm">GPT-4o</div>
-          <div className="pf-ui-sub">OpenAI SDK · Production</div>
+          <div className="pf-ui-value pf-ui-value--sm">Workflow Automation</div>
+          <div className="pf-ui-sub">Task and file-processing tools</div>
         </div>
       </div>
 
-      {/* Code card */}
+      {/* Security and data projects */}
       <div className="pf-ui-card pf-ui-card--dark">
-        <div className="pf-ui-dots">
-          <span className="pf-ui-dot pf-ui-dot--r" />
-          <span className="pf-ui-dot pf-ui-dot--y" />
-          <span className="pf-ui-dot pf-ui-dot--g" />
+        <div className="pf-ui-card-header">
+          <span className="pf-ui-label">
+            <ShieldCheck size={13} /> Engineering Projects
+          </span>
         </div>
-        <div className="pf-ui-code">
-          <span className="pf-kw">class</span>{" "}
-          <span className="pf-fn">FinancialAgent</span>:
-        </div>
-        <div className="pf-ui-code pf-ui-code--indent">
-          <span className="pf-kw">async def</span>{" "}
-          <span className="pf-fn">analyze</span>(data) {"->"} Report:
-        </div>
-        <div className="pf-ui-code pf-ui-code--indent pf-ui-code--comment">
-          # OpenAI · MCP · Streamlit
+        <div className="pf-ui-row">
+          <div>
+            <div className="pf-ui-value pf-ui-value--sm">Secure Applications</div>
+            <div className="pf-ui-sub">Privacy-first application systems</div>
+          </div>
+          <div>
+            <div className="pf-ui-value pf-ui-value--sm">Data Tools</div>
+            <div className="pf-ui-sub">Processing and transformation utilities</div>
+          </div>
         </div>
       </div>
 
@@ -174,7 +166,7 @@ function ProofOfWorkSection() {
           <span className="eyebrow">Two Disciplines · One Firm</span>
           <h2>Where the evidence lives</h2>
           <p>
-            FINWEB operates through two specialist engines. Each discipline has
+            MMQH operates through two specialist engines. Each discipline has
             its own body of work — explore them independently or see how they
             connect.
           </p>
@@ -239,26 +231,26 @@ function ProofOfWorkSection() {
      3d. Industries Supported
 ───────────────────────────────────────────────────────────────── */
 
-/* ── 3a. Impact metrics ────────────────────────────────────── */
-const impactMetrics = [
+/* ── 3a. Practice scope ────────────────────────────────────── */
+const practiceScope = [
   {
-    value: "850M+",
-    label: "Financial Records Managed",
-    sub:   "Across multiple accounting environments",
+    value: "Financial Records",
+    label: "Structured Operations",
+    sub:   "Bookkeeping, reconciliation and close support",
   },
   {
-    value: "1.7B+",
-    label: "Annual Sales Supported",
-    sub:   "Revenue-level financial reporting",
+    value: "Management Reporting",
+    label: "Decision Support",
+    sub:   "Financial statements, forecasts and commentary",
   },
   {
-    value: "1.5B+",
-    label: "Purchasing Operations",
-    sub:   "Procurement & AP accounting coverage",
+    value: "Financial Controls",
+    label: "Operational Confidence",
+    sub:   "Documented processes and review-ready records",
   },
   {
     value: "Multi-Industry",
-    label: "Business Reporting",
+    label: "Business Context",
     sub:   "Construction · Retail · Coaching · Services",
   },
 ];
@@ -346,7 +338,6 @@ const financialProjects = [
     lessons: "Construction businesses need project-level cost visibility connected to company-wide cash flow. A single model serving both levels eliminates the information gap.",
     related: ["Financial Reporting","Cash Flow Analysis","Excel Engineering"],
     duration: "1–7 Days",
-    priceRange: "$200–$400",
     accent: "#e8f3ff",
     accentBorder: "rgba(11,91,211,0.15)",
   },
@@ -367,7 +358,6 @@ const financialProjects = [
     lessons: "Service businesses need a chart of accounts that reflects how revenue is actually earned. Specificity makes ongoing categorisation intuitive and accurate.",
     related: ["Bookkeeping","Financial Statements","QuickBooks"],
     duration: "1–7 Days",
-    priceRange: "$200–$400",
     accent: "#f0fdf6",
     accentBorder: "rgba(16,163,92,0.15)",
   },
@@ -388,7 +378,6 @@ const financialProjects = [
     lessons: "Retail/wholesale businesses need channel-level revenue separation from day one. Retrofitting this structure is always more expensive than building it correctly at the start.",
     related: ["Chart of Accounts","Financial Controls","Accounting Operations"],
     duration: "1–7 Days",
-    priceRange: "$100–$200",
     accent: "#fff8f0",
     accentBorder: "rgba(234,142,30,0.15)",
   },
@@ -409,7 +398,6 @@ const financialProjects = [
     lessons: "Multi-entity cleanup requires resolving intercompany balances before any entity can be considered reconciled. Attempting to reconcile entities independently produces circular errors.",
     related: ["Bank Reconciliation","Multi-entity Accounting","Financial Controls"],
     duration: "1–7 Days",
-    priceRange: "$800–$1,000",
     accent: "#fdf4ff",
     accentBorder: "rgba(139,92,246,0.15)",
   },
@@ -430,7 +418,6 @@ const financialProjects = [
     lessons: "Financial statement preparation is only as reliable as the underlying ledger. Starting with a trial balance reconciliation before preparing statements prevents cascading errors.",
     related: ["Financial Reporting","General Ledger","Balance Sheet Management"],
     duration: "1–7 Days",
-    priceRange: "$200–$500",
     accent: "#f0f6ff",
     accentBorder: "rgba(11,91,211,0.12)",
   },
@@ -451,7 +438,6 @@ const financialProjects = [
     lessons: "Data quality at the point of extraction determines the accuracy of every downstream report, reconciliation, and analysis. Validation at the source is not optional.",
     related: ["Excel Engineering","Data Validation","Financial Data Processing"],
     duration: "1–5 Days",
-    priceRange: "$100–$300",
     accent: "#f5f0ff",
     accentBorder: "rgba(139,92,246,0.12)",
   },
@@ -487,12 +473,12 @@ function FinancialProjectCard({
         </div>
         <div className="pf-fin-vis-meta">
           <div className="pf-fin-meta-item">
-            <span className="pf-fin-meta-label">Timeframe</span>
+            <span className="pf-fin-meta-label">Timeline</span>
             <span className="pf-fin-meta-value">{project.duration}</span>
           </div>
           <div className="pf-fin-meta-item">
-            <span className="pf-fin-meta-label">Investment</span>
-            <span className="pf-fin-meta-value">{project.priceRange}</span>
+            <span className="pf-fin-meta-label">Engagement</span>
+            <span className="pf-fin-meta-value">Consulting case study</span>
           </div>
         </div>
       </div>
@@ -529,6 +515,15 @@ function FinancialProjectCard({
           <p>{project.solution}</p>
         </div>
 
+        <div className="pf-fin-objectives">
+          <div className="pf-fin-block-label">Deliverables</div>
+          <ul>
+            {project.deliverables.map((deliverable) => (
+              <li key={deliverable}><CheckCircle2 size={12} />{deliverable}</li>
+            ))}
+          </ul>
+        </div>
+
         <div className="pf-fin-areas">
           <div className="pf-fin-block-label">Financial Areas</div>
           <div className="pf-fin-area-tags">
@@ -536,13 +531,24 @@ function FinancialProjectCard({
           </div>
         </div>
 
-        <div className="pf-fin-tools">
-          {project.tools.map((t) => <span key={t} className="pf-tool-tag">{t}</span>)}
+        <div className="pf-fin-block">
+          <div className="pf-fin-block-label">Technologies & Tools</div>
+          <div className="pf-fin-tools">
+            {project.tools.map((t) => <span key={t} className="pf-tool-tag">{t}</span>)}
+          </div>
         </div>
 
-        <div className="pf-case-outcome">
-          <TrendingUp size={14} />
-          <span>{project.outcome}</span>
+        <div className="pf-fin-block">
+          <div className="pf-fin-block-label">Business Outcome</div>
+          <div className="pf-case-outcome">
+            <TrendingUp size={14} />
+            <span>{project.outcome}</span>
+          </div>
+        </div>
+
+        <div className="pf-fin-block">
+          <div className="pf-fin-block-label">Timeline</div>
+          <p>{project.duration}</p>
         </div>
 
         <div className="pf-fin-lessons">
@@ -590,13 +596,13 @@ function FinancialSection() {
           </p>
         </div>
 
-        {/* Executive overview — impact metrics */}
+        {/* Executive overview — practice scope */}
         <div className="pf-fin-impact">
-          {impactMetrics.map((m) => (
-            <div key={m.label} className="pf-fin-impact-item">
-              <div className="pf-fin-impact-value">{m.value}</div>
-              <div className="pf-fin-impact-label">{m.label}</div>
-              <div className="pf-fin-impact-sub">{m.sub}</div>
+          {practiceScope.map((item) => (
+            <div key={item.label} className="pf-fin-impact-item">
+              <div className="pf-fin-impact-value">{item.value}</div>
+              <div className="pf-fin-impact-label">{item.label}</div>
+              <div className="pf-fin-impact-sub">{item.sub}</div>
             </div>
           ))}
         </div>
@@ -750,7 +756,7 @@ const engineeringProjects = [
       "Priority-based task management with persistence",
       "Multi-format file conversion (CSV, Excel, JSON, PDF)",
       "Clean Streamlit interfaces for non-technical users",
-      "Automated workflow triggers and notifications",
+      "Event-driven workflow triggers",
     ],
     businessValue: "Demonstrates ability to build internal tools that real teams adopt — not just technical demos.",
     accent: "#fffbf0",
@@ -1077,14 +1083,15 @@ const principles = [
     title: "Performance First",
     body: "Every system is designed with performance as a constraint, not an afterthought. Fast interfaces, efficient queries, and lean pipelines.",
     visual: (
-      <div className="pf-principle-visual pf-pv-bars" aria-hidden="true">
-        {[60, 75, 85, 92, 98].map((v, i) => (
-          <div key={i} className="pf-pv-bar-wrap">
-            <div className="pf-pv-bar" style={{ width: `${v}%` }}>
-              <span>{v}</span>
+      <div className="pf-principle-visual pf-pv-access" aria-hidden="true">
+        <div className="pf-pv-access-label">Performance priorities</div>
+        <div className="pf-pv-access-checks">
+          {["Fast interfaces", "Efficient queries", "Lean pipelines", "Purposeful assets"].map((c) => (
+            <div key={c} className="pf-pv-check">
+              <CheckCircle2 size={13} />{c}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     ),
   },
@@ -1140,10 +1147,12 @@ const principles = [
     title: "Maintainability",
     body: "Code is written to be read by humans, not just executed by machines. Clear naming, documented decisions, and consistent structure that future maintainers can follow.",
     visual: (
-      <div className="pf-principle-visual pf-pv-code" aria-hidden="true">
-        <div className="pf-pv-code-line"><span className="pf-kw">def</span> <span className="pf-fn">process_financial_data</span>():</div>
-        <div className="pf-pv-code-line pf-pv-indent"><span className="pf-cm"># Validate, transform, return</span></div>
-        <div className="pf-pv-code-line pf-pv-indent"><span className="pf-kw">return</span> <span className="pf-fn">clean_records</span></div>
+      <div className="pf-principle-visual pf-pv-layers" aria-hidden="true">
+        {["Clear Naming", "Documented Decisions", "Consistent Structure", "Practical Handover"].map((l, i) => (
+          <div key={l} className="pf-pv-layer" style={{ opacity: 1 - i * 0.15 }}>
+            {l}
+          </div>
+        ))}
       </div>
     ),
   },
@@ -1154,7 +1163,7 @@ const principles = [
     visual: (
       <div className="pf-principle-visual pf-pv-components" aria-hidden="true">
         <div className="pf-pv-comp-grid">
-          {["Button", "Card", "Input", "Badge", "Modal", "Table"].map((c) => (
+          {["Interface", "Workflow", "Data", "Validation", "Access", "Reporting"].map((c) => (
             <div key={c} className="pf-pv-comp">{c}</div>
           ))}
         </div>
@@ -1166,20 +1175,15 @@ const principles = [
     title: "Clean Code",
     body: "Every function does one thing. Every module has a clear boundary. Dependencies are explicit. Complexity is earned, not inherited from careless construction.",
     visual: (
-      <div className="pf-principle-visual pf-pv-clean" aria-hidden="true">
-        {[
-          { label: "Complexity", v: 12, max: 100 },
-          { label: "Coverage", v: 94, max: 100 },
-          { label: "Duplication", v: 3, max: 100 },
-        ].map((m) => (
-          <div key={m.label} className="pf-pv-meter">
-            <div className="pf-pv-meter-label">{m.label}</div>
-            <div className="pf-pv-meter-bar">
-              <div className="pf-pv-meter-fill" style={{ width: `${m.v}%` }} />
+      <div className="pf-principle-visual pf-pv-access" aria-hidden="true">
+        <div className="pf-pv-access-label">Engineering qualities</div>
+        <div className="pf-pv-access-checks">
+          {["Focused responsibilities", "Clear module boundaries", "Explicit dependencies", "Readable structure"].map((c) => (
+            <div key={c} className="pf-pv-check">
+              <CheckCircle2 size={13} />{c}
             </div>
-            <div className="pf-pv-meter-val">{m.v}</div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     ),
   },
@@ -1288,17 +1292,17 @@ function EngineeringDepthSection() {
       <div className="container">
         <div className="pf-gh-grid">
           <div className="pf-gh-copy">
-            <span className="eyebrow">Built by FINWEB · Engineered for Business</span>
+            <span className="eyebrow">Built by MMQH · Engineered for Business</span>
             <h2>Engineering built to a professional standard.</h2>
             <p>
-              Every engineering capability at FINWEB is grounded in practical,
+              Every engineering capability at MMQH is grounded in practical,
               working systems — not certifications or theoretical knowledge. From
               AI agent architectures to encrypted security platforms, the work
               reflects the standard applied to every client engagement.
             </p>
             <p>
-              FINWEB builds software that is secure, maintainable, and aligned
-              to a business outcome — delivered under the FINWEB brand, owned by
+              MMQH builds software that is secure, maintainable, and aligned
+              to a business outcome — delivered under the MMQH brand, owned by
               the client.
             </p>
             <div className="actions">

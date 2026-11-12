@@ -23,53 +23,50 @@ import { ContactForm } from "@/components/ContactForm";
 export const metadata = {
   title: "Contact — Start a Conversation",
   description:
-    "Reach out to FINWEB SOLUTION for financial operations consulting, web development, AI engineering, or a general inquiry. We respond within 24 hours.",
+    "Reach out to MMQH SOLUTION for financial operations consulting, web development, AI engineering, or a general inquiry. We respond within 24 hours.",
 };
 
 /* ─────────────────────────────────────────────────────────────
-   HERO VISUAL — conversation cards composition
+   HERO VISUAL — client engagement workflow
 ─────────────────────────────────────────────────────────────── */
 function ContactHeroVisual() {
   return (
     <div className="ct-hero-visual" aria-hidden="true">
 
-      {/* Email preview card */}
-      <div className="ct-vis-card ct-vis-card--top">
+      {/* Discovery and strategy */}
+      <div className="ct-vis-card ct-vis-card--top ct-vis-card--accent">
         <div className="ct-vis-card-header">
-          <span className="ct-vis-label"><Mail size={12} /> New Inquiry</span>
-          <span className="ct-vis-badge ct-badge-blue">Received</span>
+          <span className="ct-vis-label"><MessageSquare size={12} /> Project Discovery</span>
+          <span className="ct-vis-badge ct-badge-blue">First step</span>
         </div>
-        <div className="ct-vis-subject">Re: Financial Dashboard Project</div>
-        <div className="ct-vis-preview">
-          Thank you for reaching out. We have received your inquiry and will…
-        </div>
-        <div className="ct-vis-meta">
-          <span>FINWEB SOLUTION</span>
-          <span>Just now</span>
+        <div className="ct-vis-heading">Strategy Session</div>
+        <div className="ct-vis-description">
+          Clarify the business context, project priorities, constraints, and the most useful next step.
         </div>
       </div>
 
-      {/* Two stat cards */}
+      {/* Engagement paths */}
       <div className="ct-vis-row">
-        <div className="ct-vis-card ct-vis-card--sm ct-vis-card--accent">
-          <div className="ct-vis-label"><Clock size={11} /> Response Time</div>
-          <div className="ct-vis-value">24h</div>
-          <div className="ct-vis-sub">Business days</div>
+        <div className="ct-vis-card ct-vis-card--sm">
+          <div className="ct-vis-label"><Globe2 size={11} /> International Clients</div>
+          <div className="ct-vis-path">Business Consultation</div>
+          <div className="ct-vis-sub">Clear, structured collaboration</div>
         </div>
         <div className="ct-vis-card ct-vis-card--sm">
-          <div className="ct-vis-label"><Globe2 size={11} /> Serving</div>
-          <div className="ct-vis-value">US · UK</div>
-          <div className="ct-vis-sub">EU · International</div>
+          <div className="ct-vis-label"><Lock size={11} /> Secure Communication</div>
+          <div className="ct-vis-path">Discovery Call</div>
+          <div className="ct-vis-sub">Confidential project discussion</div>
         </div>
       </div>
 
-      {/* Trust card */}
+      {/* Response workflow */}
       <div className="ct-vis-card">
+        <div className="ct-vis-label"><Handshake size={12} /> Response Process</div>
         <div className="ct-vis-trust-list">
           {[
-            { icon: <ShieldCheck size={13} />, text: "Confidential discussions" },
-            { icon: <Lock size={13} />,        text: "NDAs available on request" },
-            { icon: <CheckCircle2 size={13} />, text: "No obligation to proceed" },
+            { icon: <FileText size={13} />, text: "Review the project context" },
+            { icon: <MessageSquare size={13} />, text: "Confirm the right engagement path" },
+            { icon: <CheckCircle2 size={13} />, text: "Move into project planning" },
           ].map((t) => (
             <div key={t.text} className="ct-vis-trust-item">
               {t.icon}
@@ -316,7 +313,7 @@ const faqs = [
   },
   {
     q: "Can we work together internationally?",
-    a: "Yes. FINWEB works with clients across the US, UK, and EU. All communication is in English, all deliverables are produced to international professional standards, and time-zone differences are managed through asynchronous communication.",
+    a: "Yes. MMQH works with clients across the US, UK, and EU. All communication is in English, all deliverables are produced to international professional standards, and time-zone differences are managed through asynchronous communication.",
   },
   {
     q: "Can you review our existing systems?",

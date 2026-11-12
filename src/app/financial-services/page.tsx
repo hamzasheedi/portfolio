@@ -37,7 +37,7 @@ export const metadata = {
 /* ═══════════════════════════════════════════════════════════
    HERO FINANCIAL EXPERTISE VISUAL
 ═══════════════════════════════════════════════════════════ */
-function FinanceDashboard() {
+function FinancialExpertiseVisual() {
   const assets = [
     "Financial Statements",
     "Cash Flow Forecast",
@@ -50,34 +50,35 @@ function FinanceDashboard() {
   ];
 
   return (
-    <div className="fin-dashboard" aria-hidden="true">
-      <div className="fin-dash-card fin-dash-card--accent">
-        <div className="fin-dash-top">
-          <span className="fin-dash-label">Financial Expertise</span>
-          <span className="fin-dash-badge fin-dash-badge--blue">Connected assets</span>
+    <div className="fin-expertise-visual" aria-hidden="true">
+      <div className="fin-expertise-intro">
+        <div className="fin-expertise-topline">
+          <span className="fin-expertise-label">Financial Expertise</span>
+          <span className="fin-expertise-kicker">Connected practice</span>
         </div>
-        <div className="fin-dash-value" style={{ fontSize: "1.5rem" }}>
+        <div className="fin-expertise-title">
           From source records to decision-ready reporting.
         </div>
-        <div className="fin-dash-sub">
+        <div className="fin-expertise-summary">
           Practical financial assets designed around accurate records, clear analysis and maintainable controls.
         </div>
       </div>
 
-      <div className="fin-dash-row-grid">
-        {assets.slice(0, 2).map((asset) => (
-          <div key={asset} className="fin-dash-card">
-            <div className="fin-dash-label">{asset}</div>
-            <div className="fin-dash-sub">Structured for business use and review</div>
+      <div className="fin-expertise-primary">
+        {assets.slice(0, 2).map((asset, index) => (
+          <div key={asset} className="fin-expertise-primary-item">
+            <span className="fin-expertise-index">0{index + 1}</span>
+            <span>{asset}</span>
           </div>
         ))}
       </div>
 
-      <div className="fin-dash-card">
-        {assets.slice(2).map((asset) => (
-          <div key={asset} className="fin-dash-row">
-            <span className="fin-dash-row-label">{asset}</span>
-            <span className="fin-dash-row-value">Financial capability</span>
+      <div className="fin-expertise-map">
+        {assets.slice(2).map((asset, index) => (
+          <div key={asset} className="fin-expertise-map-item">
+            <span className="fin-expertise-marker" />
+            <span>{asset}</span>
+            <span className="fin-expertise-index">0{index + 3}</span>
           </div>
         ))}
       </div>
@@ -191,76 +192,56 @@ type CaseStudy = {
   Visual:       () => ReactElement;
 };
 
-function ConstructionVisual() {
+function EngagementCover({
+  Icon,
+  label,
+  title,
+  stages,
+  badges,
+  background,
+  borderColor,
+}: {
+  Icon: typeof BarChart3;
+  label: string;
+  title: string;
+  stages: string[];
+  badges: string[];
+  background: string;
+  borderColor: string;
+}) {
   return (
-    <div className="fin-cs-visual" style={{ background: "linear-gradient(135deg,#e8f1ff 0%,#f7faff 100%)", borderColor: "rgba(11,91,211,0.15)" }}>
-      <div className="fin-cs-visual-label"><BarChart3 size={13} /> Cash Flow Projection</div>
-      <div className="fin-cs-visual-title">Financial Projection Dashboard</div>
+    <div className="fin-cs-visual" style={{ background, borderColor }} aria-hidden="true">
+      <div className="fin-cs-visual-label"><Icon size={13} /> {label}</div>
+      <div className="fin-cs-visual-title">{title}</div>
       <div className="fin-cs-rows">
-        {[["Revenue Forecast","$284,500"],["Expense Tracking","$91,200"],["Profit Margin","67.9%"],["90-Day Cash Flow","$193,300"]].map(([l,v])=>(
-          <div key={l} className="fin-cs-row"><span>{l}</span><span className="fin-cs-val">{v}</span></div>
+        {stages.map((stage, index) => (
+          <div key={stage} className="fin-cs-row">
+            <span>{stage}</span>
+            <span className="fin-cs-val">{String(index + 1).padStart(2, "0")}</span>
+          </div>
         ))}
       </div>
       <div className="fin-cs-badge-row">
-        <span className="fin-cs-badge">Excel Dashboard</span>
-        <span className="fin-cs-badge">Forecasting Model</span>
+        {badges.map((badge) => <span key={badge} className="fin-cs-badge">{badge}</span>)}
       </div>
     </div>
   );
+}
+
+function ConstructionVisual() {
+  return <EngagementCover Icon={BarChart3} label="Financial Modelling" title="Projection and planning architecture" stages={["Revenue assumptions", "Expense structure", "Profit analysis", "Cash flow planning"]} badges={["Excel Dashboard", "Forecasting Model"]} background="linear-gradient(135deg,#e8f1ff 0%,#f7faff 100%)" borderColor="rgba(11,91,211,0.15)" />;
 }
 
 function CoachingVisual() {
-  return (
-    <div className="fin-cs-visual" style={{ background: "linear-gradient(135deg,#f0fdf6 0%,#ffffff 100%)", borderColor: "rgba(16,163,92,0.15)" }}>
-      <div className="fin-cs-visual-label"><BookOpen size={13} /> QuickBooks Setup</div>
-      <div className="fin-cs-visual-title">Financial Statements</div>
-      <div className="fin-cs-rows">
-        {[["Chart of Accounts","Structured"],["P&L Statement","✓ Clean"],["Balance Sheet","✓ Balanced"],["Budget Reports","✓ On target"]].map(([l,v])=>(
-          <div key={l} className="fin-cs-row"><span>{l}</span><span className="fin-cs-val" style={{color:"#0e6245"}}>{v}</span></div>
-        ))}
-      </div>
-      <div className="fin-cs-badge-row">
-        <span className="fin-cs-badge">QuickBooks Online</span>
-        <span className="fin-cs-badge">Financial Reporting</span>
-      </div>
-    </div>
-  );
+  return <EngagementCover Icon={BookOpen} label="Bookkeeping" title="Financial statement foundation" stages={["QuickBooks configuration", "Chart of accounts", "Financial statements", "Owner handover"]} badges={["QuickBooks Online", "Financial Reporting"]} background="linear-gradient(135deg,#f0fdf6 0%,#ffffff 100%)" borderColor="rgba(16,163,92,0.15)" />;
 }
 
 function RetailVisual() {
-  return (
-    <div className="fin-cs-visual" style={{ background: "linear-gradient(135deg,#fff8f0 0%,#ffffff 100%)", borderColor: "rgba(234,142,30,0.15)" }}>
-      <div className="fin-cs-visual-label"><Layers size={13} /> Chart of Accounts</div>
-      <div className="fin-cs-visual-title">Financial Architecture</div>
-      <div className="fin-cs-rows">
-        {[["Expense Categories","Structured"],["Revenue Streams","Separated"],["Historical Migration","✓ Done"],["Team Training","Completed"]].map(([l,v])=>(
-          <div key={l} className="fin-cs-row"><span>{l}</span><span className="fin-cs-val">{v}</span></div>
-        ))}
-      </div>
-      <div className="fin-cs-badge-row">
-        <span className="fin-cs-badge">Chart of Accounts</span>
-        <span className="fin-cs-badge">Financial Structure</span>
-      </div>
-    </div>
-  );
+  return <EngagementCover Icon={Layers} label="Financial Architecture" title="Structured accounting framework" stages={["Account architecture", "Category standards", "Historical migration", "Team training"]} badges={["Chart of Accounts", "Financial Structure"]} background="linear-gradient(135deg,#fff8f0 0%,#ffffff 100%)" borderColor="rgba(234,142,30,0.15)" />;
 }
 
 function MultiEntityVisual() {
-  return (
-    <div className="fin-cs-visual" style={{ background: "linear-gradient(135deg,#f5f0ff 0%,#ffffff 100%)", borderColor: "rgba(139,92,246,0.15)" }}>
-      <div className="fin-cs-visual-label"><RefreshCw size={13} /> Bookkeeping Cleanup</div>
-      <div className="fin-cs-visual-title">Multi-Entity Catch-Up</div>
-      <div className="fin-cs-rows">
-        {[["Entities Covered","2 Companies"],["Bank Reconciliation","✓ All accounts"],["Intercompany","✓ Resolved"],["Tax Ready","✓ Confirmed"]].map(([l,v])=>(
-          <div key={l} className="fin-cs-row"><span>{l}</span><span className="fin-cs-val" style={{color:"#5b21b6"}}>{v}</span></div>
-        ))}
-      </div>
-      <div className="fin-cs-badge-row">
-        <span className="fin-cs-badge">Multi-entity</span>
-        <span className="fin-cs-badge">Bank Reconciliation</span>
-      </div>
-    </div>
-  );
+  return <EngagementCover Icon={RefreshCw} label="Bookkeeping Clean-Up" title="Multi-entity reconciliation workflow" stages={["Transaction catch-up", "Account reconciliation", "Intercompany treatment", "Audit trail handover"]} badges={["Multi-entity", "Bank Reconciliation"]} background="linear-gradient(135deg,#f5f0ff 0%,#ffffff 100%)" borderColor="rgba(139,92,246,0.15)" />;
 }
 
 const caseStudies: CaseStudy[] = [
@@ -359,7 +340,7 @@ function CaseStudiesSection() {
                   <p>{cs.challenge}</p>
                 </div>
                 <div className="fin-cs-block">
-                  <div className="fin-cs-block-label">Approach</div>
+                  <div className="fin-cs-block-label">Solution — Current Approach</div>
                   <p>{cs.approach}</p>
                 </div>
                 <div className="fin-cs-deliverables">
@@ -370,15 +351,27 @@ function CaseStudiesSection() {
                     ))}
                   </ul>
                 </div>
-                <div className="fin-cs-tools">
-                  {cs.tools.map((t) => <span key={t} className="fin-tool-tag">{t}</span>)}
+                <div className="fin-cs-block">
+                  <div className="fin-cs-block-label">Practice Areas</div>
+                  <div className="fin-cs-tools">
+                    {cs.areas.map((area) => <span key={area} className="fin-tool-tag">{area}</span>)}
+                  </div>
                 </div>
-                <div className="fin-cs-outcome">
-                  <TrendingUp size={14} />
-                  <span>{cs.outcome}</span>
+                <div className="fin-cs-block">
+                  <div className="fin-cs-block-label">Tools</div>
+                  <div className="fin-cs-tools">
+                    {cs.tools.map((t) => <span key={t} className="fin-tool-tag">{t}</span>)}
+                  </div>
+                </div>
+                <div className="fin-cs-block">
+                  <div className="fin-cs-block-label">Business Outcome</div>
+                  <div className="fin-cs-outcome">
+                    <TrendingUp size={14} />
+                    <span>{cs.outcome}</span>
+                  </div>
                 </div>
                 <div className="fin-cs-footer">
-                  <span className="fin-cs-timeframe">Timeframe: {cs.timeframe}</span>
+                  <span className="fin-cs-timeframe">Timeline: {cs.timeframe}</span>
                   <Link href="/contact?interest=financial" className="btn btn--secondary btn--sm">
                     Discuss similar work <ArrowUpRight size={13} />
                   </Link>
@@ -806,23 +799,15 @@ function TechnologySection() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SECTION 13 — WHY FINWEB (upgraded alternating blocks)
+   SECTION 13 — WHY MMQH (upgraded alternating blocks)
 ═══════════════════════════════════════════════════════════ */
 function WhyVisualBars() {
-  const rows = [{ l: "Reporting", p: 92 }, { l: "Controls", p: 88 }, { l: "Reconciliation", p: 95 }, { l: "Close speed", p: 85 }];
+  const rows = ["Source records", "Documented assumptions", "Review context", "Decision-ready output"];
   return (
-    <div className="why-block-visual">
-      <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "var(--sp-2)" }}>
-        {rows.map(({ l, p }) => (
-          <div key={l} style={{ display: "flex", alignItems: "center", gap: "var(--sp-2)" }}>
-            <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "var(--muted)", minWidth: 96 }}>{l}</span>
-            <div style={{ flex: 1, height: 8, borderRadius: 999, background: "var(--line)", overflow: "hidden" }}>
-              <div style={{ height: "100%", width: `${p}%`, borderRadius: 999, background: "var(--blue)" }} />
-            </div>
-            <span style={{ fontSize: "var(--text-xs)", fontWeight: 700, color: "var(--navy)", minWidth: "2.5ch" }}>{p}</span>
-          </div>
-        ))}
-      </div>
+    <div className="why-block-visual" aria-hidden="true">
+      <ul className="check-list" style={{ width: "100%" }}>
+        {rows.map((item) => <li key={item}>{item}</li>)}
+      </ul>
     </div>
   );
 }
@@ -844,12 +829,12 @@ function WhyVisualDocs() {
 
 function WhyVisualProcess() {
   return (
-    <div className="why-block-visual">
+    <div className="why-block-visual" aria-hidden="true">
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--sp-2)", width: "100%" }}>
-        {[{v:"5d",l:"Close cycle"},{v:"✓",l:"Audit ready"},{v:"100%",l:"Reconciled"},{v:"0",l:"Backlogs"}].map(({v,l})=>(
-          <div key={l} style={{ background: "var(--soft)", border: "1px solid var(--line)", borderRadius: "var(--radius-sm)", padding: "var(--sp-2)", textAlign: "center" }}>
-            <div style={{ fontSize: "var(--text-xl)", fontWeight: 900, color: "var(--navy)", letterSpacing: "-0.03em" }}>{v}</div>
-            <div style={{ fontSize: 11, color: "var(--subtle)", marginTop: 2 }}>{l}</div>
+        {["Close checklist", "Reconciliation sequence", "Defined ownership", "Documented handover"].map((label) => (
+          <div key={label} style={{ background: "var(--soft)", border: "1px solid var(--line)", borderRadius: "var(--radius-sm)", padding: "var(--sp-2)", textAlign: "center" }}>
+            <Workflow size={20} style={{ color: "var(--blue)", marginInline: "auto" }} />
+            <div style={{ fontSize: 11, color: "var(--subtle)", marginTop: 6 }}>{label}</div>
           </div>
         ))}
       </div>
@@ -898,13 +883,13 @@ const whyBlocks = [
   },
 ] as const;
 
-function WhyFinwebSection() {
+function WhyMMQHSection() {
   return (
-    <section className="why-section" id="why-finweb">
+    <section className="why-section" id="why-MMQH">
       <div className="container">
         <div className="fin-section-header">
           <div>
-            <span className="eyebrow">Why FINWEB</span>
+            <span className="eyebrow">Why MMQH</span>
             <h2>Proof over promises.</h2>
           </div>
           <p>Four principles that shape every financial engagement — and make the difference between a project and a lasting system.</p>
@@ -955,7 +940,7 @@ export default function FinancialServices() {
               ))}
             </div>
           </div>
-          <FinanceDashboard />
+          <FinancialExpertiseVisual />
         </div>
       </section>
 
@@ -992,8 +977,8 @@ export default function FinancialServices() {
       {/* 12. TECHNOLOGY */}
       <TechnologySection />
 
-      {/* 13. WHY FINWEB */}
-      <WhyFinwebSection />
+      {/* 13. WHY MMQH */}
+      <WhyMMQHSection />
 
       {/* 14. CTA */}
       <section className="fin-cta">
@@ -1008,11 +993,11 @@ export default function FinancialServices() {
               Discuss your finance system <ArrowRight size={17} />
             </Link>
             <Link className="btn btn--ghost" href="/about">
-              Learn about FINWEB
+              Learn about MMQH
             </Link>
           </div>
           <p className="fin-cta-note">
-            FINWEB SOLUTION is not a law firm and does not provide legal advice.
+            MMQH SOLUTION is not a law firm and does not provide legal advice.
           </p>
         </div>
       </section>

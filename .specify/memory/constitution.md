@@ -28,11 +28,11 @@ Sync Impact Report
 - Follow-up TODOs:
   - Sponsor decisions listed in Section 11
 -->
-# Project Constitution — Portfolio Website For FinWeb Solution
+# Project Constitution — Portfolio Website For MMQH Solution
 
 ## 1. Purpose & Scope Alignment
 
-- The website MUST position FINWEB SOLUTION as one premium international B2B agency with two
+- The website MUST position MMQH SOLUTION as one premium international B2B agency with two
   equal engines: Financial Operations & Accounting and Digital Architecture & Web Development.
 - The primary audiences are US, UK, and EU SMEs, DTC and B2B e-commerce brands, corporate
   firms, and funded startups; priority decision-makers are CFOs, Finance Managers, Founders,
@@ -55,7 +55,7 @@ Sync Impact Report
   automation MUST be presented as strategic finance engineering, not commodity spreadsheet work.
 - Claims MUST be attributable and quantifiable. Unverified performance, compliance, client, or
   outcome claims are NOT ALLOWED.
-- The tax offering MUST state that FINWEB SOLUTION provides support and is not a law firm.
+- The tax offering MUST state that MMQH SOLUTION provides support and is not a law firm.
 - Portfolio evidence MUST include the business problem, technical strategy, measurable impact,
   dated performance evidence, social proof where authorised, and a direct web-development CTA.
 - Contact intake MUST adapt to Financial, Web, and General inquiries, validate data server-side,

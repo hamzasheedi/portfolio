@@ -8,7 +8,7 @@ interface CtaButtonProps {
 export function CtaButton({ active = false, onClick }: CtaButtonProps) {
   return (
     <Link
-      className="finweb-header__cta"
+      className="MMQH-header__cta"
       href="/contact"
       aria-current={active ? "page" : undefined}
       onClick={onClick}

@@ -34,90 +34,41 @@ export const metadata = {
 };
 
 /* ─────────────────────────────────────────────
-   HERO UI PREVIEW — right panel
+   ENGINEERING CAPABILITY PREVIEW — right panel
 ───────────────────────────────────────────── */
 function WdUIPreview() {
-  const chartBars = [42, 58, 35, 72, 51, 66, 88];
+  const capabilities = [
+    { Icon: Bot, title: "AI Applications", detail: "Agentic workflows and purposeful AI products" },
+    { Icon: Lock, title: "Secure Platforms", detail: "Security-first systems for sensitive workflows" },
+    { Icon: RefreshCw, title: "Automation Systems", detail: "Reliable tools for repeatable business operations" },
+    { Icon: Database, title: "Data Processing Tools", detail: "Accessible interfaces for structured data work" },
+    { Icon: Microscope, title: "Machine Learning Projects", detail: "Practical model and data pipeline implementations" },
+    { Icon: Package, title: "Developer Utilities", detail: "Reusable tools and open-source contributions" },
+  ];
+
   return (
     <div className="wd-ui-preview" aria-hidden="true">
-
-      {/* Code editor card */}
       <div className="wd-ui-card wd-ui-card--dark">
-        <div className="wd-ui-dots">
-          <span className="wd-ui-dot wd-ui-dot--red" />
-          <span className="wd-ui-dot wd-ui-dot--yellow" />
-          <span className="wd-ui-dot wd-ui-dot--green" />
+        <div className="wd-ui-label">Engineering Showcase</div>
+        <div className="wd-ui-value" style={{ fontSize: "1.5rem", marginTop: "var(--sp-2)" }}>
+          Modern systems built around real product needs.
         </div>
-        <div className="wd-ui-code-line">
-          <span className="wd-kw">async</span>{" "}
-          <span className="wd-fn">encrypt_file</span>
-          {"(path: "}
-          <span className="wd-str">str</span>
-          {") -> "}
-          <span className="wd-str">bytes</span>:
-        </div>
-        <div className="wd-ui-code-line" style={{ paddingLeft: 16 }}>
-          <span className="wd-cm"># AES-256 + PBKDF2 key derivation</span>
-        </div>
-        <div className="wd-ui-code-line" style={{ paddingLeft: 16 }}>
-          <span className="wd-kw">return</span>{" "}
-          <span className="wd-fn">cipher</span>
-          .encrypt(data)
-        </div>
-        <div className="wd-ui-code-line" style={{ marginTop: 6 }}>
-          <span className="wd-fn">agent</span>
-          {" = "}
-          <span className="wd-fn">OpenAIAgent</span>
-          {"(model="}
-          <span className="wd-str">"gpt-4o"</span>
-          {")"}
-        </div>
+        <div className="wd-ui-sub">Architecture, security, automation and maintainability considered together.</div>
       </div>
-
-      {/* Analytics + Auth row */}
       <div className="wd-ui-row-grid">
-        <div className="wd-ui-card wd-ui-card--accent">
-          <div className="wd-ui-top">
-            <span className="wd-ui-label">Analytics</span>
-            <span className="wd-ui-badge wd-ui-badge--green">
-              <TrendingUp size={10} /> Live
-            </span>
+        {capabilities.slice(0, 2).map(({ Icon, title, detail }) => (
+          <div key={title} className="wd-ui-card wd-ui-card--accent">
+            <Icon size={20} style={{ color: "var(--blue)", marginBottom: 10 }} />
+            <div className="wd-ui-label">{title}</div>
+            <div className="wd-ui-sub">{detail}</div>
           </div>
-          <div className="wd-ui-value" style={{ fontSize: "1.5rem" }}>94</div>
-          <div className="wd-ui-sub">Lighthouse score</div>
-          <div className="wd-ui-sparkline">
-            {chartBars.map((h, i) => (
-              <div
-                key={i}
-                className={`wd-ui-bar${i === chartBars.length - 1 ? " wd-ui-bar--hi" : ""}`}
-                style={{ height: `${h}%` }}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="wd-ui-card">
-          <div className="wd-ui-top">
-            <span className="wd-ui-label">AI Agent</span>
-            <span className="wd-ui-badge wd-ui-badge--purple">GPT-4o</span>
-          </div>
-          <div className="wd-ui-value" style={{ fontSize: "1.5rem" }}>MCP</div>
-          <div className="wd-ui-sub">Model Context Protocol</div>
-        </div>
+        ))}
       </div>
-
-      {/* System overview card */}
       <div className="wd-ui-card">
-        <div className="wd-ui-label" style={{ marginBottom: 12 }}>
-          Platform overview
-        </div>
-        {[
-          ["FastAPI backend",    "Running"],
-          ["File encryption",   "AES-256"],
-          ["Admin dashboard",   "Active"],
-        ].map(([label, value]) => (
-          <div key={label} className="wd-ui-row">
-            <span className="wd-ui-row-label">{label}</span>
-            <span className="wd-ui-row-value">{value}</span>
+        {capabilities.slice(2).map(({ Icon, title, detail }) => (
+          <div key={title} className="wd-ui-row">
+            <span className="wd-ui-row-label" style={{ display: "flex", alignItems: "center", gap: 7 }}><Icon size={14} />{title}</span>
+            <span className="wd-ui-row-value">{detail}</span>
           </div>
         ))}
       </div>
@@ -128,95 +79,32 @@ function WdUIPreview() {
 /* ─────────────────────────────────────────────
    PROJECT VISUAL SUB-COMPONENTS
 ───────────────────────────────────────────── */
-function SecureHubVisual() {
+function ProjectCover({ Icon, title, items, dark = false }: { Icon: typeof Lock; title: string; items: string[]; dark?: boolean }) {
   return (
-    <div
-      className="wd-proj-visual"
-      style={{ background: "linear-gradient(135deg, #e8f1ff 0%, #f5f9ff 100%)" }}
-    >
-      <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "var(--sp-2)" }}>
-        <div style={{ background: "white", border: "1px solid var(--line)", borderRadius: "var(--radius)", padding: "var(--sp-3)", boxShadow: "var(--shadow-sm)" }}>
-          <div style={{ fontSize: "var(--text-xs)", fontWeight: 700, color: "var(--navy)", marginBottom: 10 }}>Secure Hub — Admin Dashboard</div>
-          {[["Encryption engine", "AES-256 ✓"], ["Auth layer", "JWT ✓"], ["File store", "Encrypted"], ["API status", "FastAPI ●"]].map(([l, v]) => (
-            <div key={l} style={{ display: "flex", justifyContent: "space-between", padding: "5px 0", borderBottom: "1px solid var(--line-soft)", fontSize: "var(--text-xs)" }}>
-              <span style={{ color: "var(--muted)" }}>{l}</span>
-              <span style={{ fontWeight: 700, color: "var(--navy)" }}>{v}</span>
-            </div>
-          ))}
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--sp-2)" }}>
-          {[{ v: "AES", l: "Encryption" }, { v: "JWT", l: "Auth" }, { v: "REST", l: "API" }, { v: "100%", l: "Encrypted" }].map(({ v, l }) => (
-            <div key={l} style={{ background: "white", border: "1px solid var(--line)", borderRadius: "var(--radius-sm)", padding: "var(--sp-2)", textAlign: "center" }}>
-              <div style={{ fontSize: "var(--text-lg)", fontWeight: 900, color: "var(--blue)", letterSpacing: "-0.03em" }}>{v}</div>
-              <div style={{ fontSize: 11, color: "var(--subtle)", marginTop: 2 }}>{l}</div>
-            </div>
-          ))}
-        </div>
+    <div className="wd-proj-visual" aria-hidden="true" style={{ background: dark ? "linear-gradient(135deg, #0d2d52 0%, #071d3b 100%)" : "linear-gradient(135deg, #e8f1ff 0%, #f5f9ff 100%)" }}>
+      <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "var(--sp-2)", color: dark ? "white" : "var(--navy)" }}>
+        <Icon size={30} style={{ color: dark ? "var(--mint)" : "var(--blue)" }} />
+        <div style={{ fontSize: "var(--text-lg)", fontWeight: 800 }}>{title}</div>
+        {items.map((item) => (
+          <div key={item} style={{ padding: "10px 12px", borderRadius: "var(--radius-sm)", border: dark ? "1px solid rgba(255,255,255,0.12)" : "1px solid var(--line)", background: dark ? "rgba(255,255,255,0.06)" : "white", fontSize: "var(--text-sm)", fontWeight: 600 }}>
+            {item}
+          </div>
+        ))}
       </div>
     </div>
   );
+}
+
+function SecureHubVisual() {
+  return <ProjectCover Icon={ShieldCheck} title="Secure Hub — platform architecture" items={["Encrypted file workflows", "Authenticated access", "Administrative management", "API-led integration"]} />;
 }
 
 function AIAgentVisual() {
-  return (
-    <div
-      className="wd-proj-visual"
-      style={{ background: "linear-gradient(135deg, #0d2d52 0%, #071d3b 100%)" }}
-    >
-      <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "var(--sp-2)" }}>
-        <div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "var(--radius)", padding: "var(--sp-3)" }}>
-          <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
-            <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ff5f56" }} />
-            <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ffbd2e" }} />
-            <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#27c93f" }} />
-          </div>
-          {["agent = OpenAIAgent(model='gpt-4o')", "tool = MCPTool(server_url=url)", "result = await agent.run(task)"].map((line, i) => (
-            <div key={i} style={{ fontFamily: "monospace", fontSize: 11, color: i === 2 ? "#79c0ff" : "rgba(255,255,255,0.6)", lineHeight: 1.8 }}>{line}</div>
-          ))}
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8 }}>
-          {[{ v: "GPT-4o", l: "Model" }, { v: "MCP", l: "Protocol" }, { v: "SDK", l: "OpenAI" }].map(({ v, l }) => (
-            <div key={l} style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "var(--radius-sm)", padding: "var(--sp-2)", textAlign: "center" }}>
-              <div style={{ fontSize: "var(--text-base)", fontWeight: 900, color: "white", letterSpacing: "-0.02em" }}>{v}</div>
-              <div style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>{l}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectCover Icon={Bot} title="Agentic AI Suite — workflow architecture" items={["Tool-enabled agents", "Context-aware task execution", "Multi-agent handoffs", "External service integrations"]} dark />;
 }
 
 function DataToolsVisual() {
-  const bars = [65, 80, 45, 90, 60, 75, 95];
-  return (
-    <div
-      className="wd-proj-visual"
-      style={{ background: "linear-gradient(135deg, #f0fdf7 0%, #f5f9ff 100%)" }}
-    >
-      <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "var(--sp-2)" }}>
-        <div style={{ background: "white", border: "1px solid var(--line)", borderRadius: "var(--radius)", padding: "var(--sp-3)", boxShadow: "var(--shadow-sm)" }}>
-          <div style={{ fontSize: "var(--text-xs)", fontWeight: 700, color: "var(--navy)", marginBottom: 10 }}>Data Sweeper — Processing</div>
-          <div style={{ display: "flex", gap: 3, alignItems: "flex-end", height: 48 }}>
-            {bars.map((h, i) => (
-              <div key={i} style={{ flex: 1, height: `${h}%`, borderRadius: "3px 3px 0 0", background: i === bars.length - 1 ? "var(--blue)" : "var(--blue-light)" }} />
-            ))}
-          </div>
-          <div style={{ display: "flex", justifyContent: "space-between", marginTop: 8, fontSize: 11, color: "var(--subtle)" }}>
-            <span>CSV / Excel</span><span>Cleaned ✓</span>
-          </div>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--sp-2)" }}>
-          {[{ v: "CSV", l: "Input" }, { v: "Clean", l: "Output" }, { v: "Pandas", l: "Engine" }, { v: "Web", l: "Streamlit" }].map(({ v, l }) => (
-            <div key={l} style={{ background: "white", border: "1px solid var(--line)", borderRadius: "var(--radius-sm)", padding: "var(--sp-1) var(--sp-2)", textAlign: "center" }}>
-              <div style={{ fontSize: "var(--text-base)", fontWeight: 900, color: "var(--navy)" }}>{v}</div>
-              <div style={{ fontSize: 11, color: "var(--subtle)" }}>{l}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectCover Icon={Database} title="Data Sweeper & Automation Toolkit" items={["CSV and Excel processing", "Data cleaning workflows", "Conversion utilities", "Accessible web interfaces"]} />;
 }
 
 /* ─────────────────────────────────────────────
@@ -275,7 +163,7 @@ const projects: WdProject[] = [
       "Multi-agent handoff and orchestration",
       "Personal Employee — digital workforce automation",
     ],
-    stack: ["Python", "OpenAI SDK", "MCP", "Agentic AI", "Async", "GPT-4o"],
+    stack: ["Python", "OpenAI SDK", "MCP", "Agentic AI", "Async", "Model APIs"],
     reverse: true,
     Visual: AIAgentVisual,
   },
@@ -306,7 +194,7 @@ const projects: WdProject[] = [
    EXPERTISE CARDS DATA
 ───────────────────────────────────────────── */
 const expertise = [
-  { Icon: Bot,           title: "AI Applications",        desc: "End-to-end AI products using OpenAI GPT-4o, agent orchestration and tool-use patterns for real business automation.", techs: ["OpenAI", "GPT-4o", "Agents", "Python"] },
+  { Icon: Bot,           title: "AI Applications",        desc: "End-to-end AI products using model APIs, agent orchestration and tool-use patterns for real business automation.", techs: ["OpenAI", "Model APIs", "Agents", "Python"] },
   { Icon: Layers,        title: "Full Stack Development",  desc: "Complete web platforms from FastAPI REST backends to responsive frontends — production-ready and maintainable.", techs: ["FastAPI", "Python", "REST API", "HTML/CSS"] },
   { Icon: Lock,          title: "Secure File Systems",     desc: "AES-256 encryption, JWT authentication and secure file handling. Built with security-first architecture.", techs: ["AES-256", "JWT", "FastAPI", "Cryptography"] },
   { Icon: LayoutDashboard, title: "Dashboard Development", desc: "Admin dashboards and analytics interfaces that make complex data immediately actionable for teams.", techs: ["Streamlit", "Charts", "Admin UI", "Pandas"] },
@@ -334,7 +222,7 @@ const techGroups = [
   {
     Icon: Bot,
     name: "AI & Agents",
-    items: ["OpenAI SDK", "GPT-4o", "MCP", "Agentic AI", "Prompting"],
+    items: ["OpenAI SDK", "Model APIs", "MCP", "Agentic AI", "Prompting"],
   },
   {
     Icon: Database,
@@ -379,33 +267,25 @@ const repos = [
    ENGINEERING PRINCIPLES DATA
 ───────────────────────────────────────────── */
 function PrincipleVisualPerf() {
-  const bars = [{ l: "Load time", p: 94 }, { l: "Lighthouse", p: 98 }, { l: "Core Web", p: 91 }, { l: "Uptime", p: 100 }];
+  const items = ["Lean delivery", "Responsive interfaces", "Efficient data flows", "Scalable architecture"];
   return (
-    <div className="wd-principle-visual">
-      <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "var(--sp-2)" }}>
-        {bars.map(({ l, p }) => (
-          <div key={l} style={{ display: "flex", alignItems: "center", gap: "var(--sp-2)" }}>
-            <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "var(--muted)", minWidth: 72 }}>{l}</span>
-            <div style={{ flex: 1, height: 8, borderRadius: 999, background: "var(--line)", overflow: "hidden" }}>
-              <div style={{ height: "100%", width: `${p}%`, borderRadius: 999, background: "var(--blue)" }} />
-            </div>
-            <span style={{ fontSize: "var(--text-xs)", fontWeight: 700, color: "var(--navy)", minWidth: "3ch" }}>{p}</span>
-          </div>
-        ))}
-      </div>
+    <div className="wd-principle-visual" aria-hidden="true">
+      <ul className="check-list" style={{ width: "100%" }}>
+        {items.map((item) => <li key={item}>{item}</li>)}
+      </ul>
     </div>
   );
 }
 
 function PrincipleVisualSecurity() {
-  const items = [{ v: "AES", l: "Encryption" }, { v: "JWT", l: "Auth" }, { v: "AA", l: "WCAG" }, { v: "✓", l: "Audited" }];
+  const items = ["Encryption", "Authentication", "Input validation", "Accessible interfaces"];
   return (
-    <div className="wd-principle-visual">
+    <div className="wd-principle-visual" aria-hidden="true">
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--sp-2)", width: "100%" }}>
-        {items.map(({ v, l }) => (
-          <div key={l} style={{ background: "var(--soft)", border: "1px solid var(--line)", borderRadius: "var(--radius-sm)", padding: "var(--sp-2)", textAlign: "center" }}>
-            <div style={{ fontSize: "var(--text-xl)", fontWeight: 900, color: "var(--navy)", letterSpacing: "-0.03em" }}>{v}</div>
-            <div style={{ fontSize: 11, color: "var(--subtle)", marginTop: 2 }}>{l}</div>
+        {items.map((label) => (
+          <div key={label} style={{ background: "var(--soft)", border: "1px solid var(--line)", borderRadius: "var(--radius-sm)", padding: "var(--sp-2)", textAlign: "center" }}>
+            <ShieldCheck size={20} style={{ color: "var(--blue)", marginInline: "auto" }} />
+            <div style={{ fontSize: 11, color: "var(--subtle)", marginTop: 6 }}>{label}</div>
           </div>
         ))}
       </div>
@@ -425,13 +305,13 @@ function PrincipleVisualCode() {
 }
 
 const principles = [
-  { Icon: Zap,        title: "Performance First",        body: "Every project targets 90+ Lighthouse scores. Performance is not an afterthought — it is part of the architecture from day one.", Visual: PrincipleVisualPerf, reverse: false },
+  { Icon: Zap,        title: "Performance First",        body: "Performance is treated as an architectural concern from day one, shaping delivery, interfaces, data flows and long-term scalability.", Visual: PrincipleVisualPerf, reverse: false },
   { Icon: ShieldCheck, title: "Security by Design",       body: "Encryption, authentication and input validation built into the data model — not bolted on after the fact. Demonstrated in Secure Hub and Password Pedia.", Visual: PrincipleVisualSecurity, reverse: true },
   { Icon: Code2,       title: "Maintainable, Clean Code", body: "Typed, documented and modular. Every codebase is handed over with the expectation that a team member who was not involved can understand and extend it.", Visual: PrincipleVisualCode, reverse: false },
 ] as const;
 
 /* ─────────────────────────────────────────────
-   WHY FINWEB DATA
+   WHY MMQH DATA
 ───────────────────────────────────────────── */
 const whyCards = [
   { Icon: Box,         title: "Modern tech stack",          body: "Python, FastAPI, OpenAI SDK and MCP — not legacy frameworks. Every project uses the tools that will still be relevant in five years." },
@@ -558,8 +438,8 @@ export default function WebDevelopment() {
               <h2>Capabilities, not categories.</h2>
             </div>
             <p>
-              Each capability is demonstrated by a public repository — not
-              listed from a service brochure.
+              Each capability is grounded in named projects and practical
+              engineering work — not listed from a service brochure.
             </p>
           </div>
 
@@ -646,12 +526,12 @@ export default function WebDevelopment() {
         <div className="container">
           <div className="section-header">
             <div>
-              <span className="eyebrow">Open source work</span>
-              <h2>Code you can read before you commit.</h2>
+              <span className="eyebrow">Engineering work</span>
+              <h2>Modern software engineered for performance, security and scalability.</h2>
             </div>
             <p>
-              Every repository is public. Browse the code, review the
-              architecture, and judge the quality for yourself.
+              Explore named applications, platforms and utilities that show how
+              practical engineering capabilities translate into working products.
             </p>
           </div>
 
@@ -711,16 +591,16 @@ export default function WebDevelopment() {
         </div>
       </section>
 
-      {/* ══ 8. WHY FINWEB ════════════════════════════════════ */}
+      {/* ══ 8. WHY MMQH ════════════════════════════════════ */}
       <section className="wd-why-section">
         <div className="container">
           <div className="section-header">
             <div>
-              <span className="eyebrow">Why FINWEB</span>
+              <span className="eyebrow">Why MMQH</span>
               <h2>Engineering that means business.</h2>
             </div>
             <p>
-              Six reasons clients choose FINWEB for technical work — each one
+              Six reasons clients choose MMQH for technical work — each one
               backed by something you can verify.
             </p>
           </div>

@@ -19,7 +19,7 @@ export function Navigation({
 }: NavigationProps) {
   return (
     <nav className={className} aria-label={label}>
-      <ul className="finweb-header__nav-list">
+      <ul className="MMQH-header__nav-list">
         {navigationItems.map(({ label: itemLabel, href }) => (
           <NavigationItem
             key={href}

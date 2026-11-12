@@ -150,7 +150,7 @@ export function ContactForm({ initialType }: { initialType?: string }) {
       setReference(json.reference ?? "");
       setSubmitState("success");
     } catch (err) {
-      setServerMessage(err instanceof Error ? err.message : "We could not send your inquiry. Please email hello@finwebsolution.com directly.");
+      setServerMessage(err instanceof Error ? err.message : "We could not send your inquiry. Please email hello@MMQHsolution.com directly.");
       setSubmitState("error");
       resetKey();
     }
@@ -297,7 +297,7 @@ export function ContactForm({ initialType }: { initialType?: string }) {
           <span>
             I agree to the{" "}
             <Link href="/privacy/request" className="ct-inline-link">privacy policy</Link>
-            {" "}and consent to FINWEB processing my inquiry.{" "}
+            {" "}and consent to MMQH processing my inquiry.{" "}
             <span className="ct-req">*</span>
           </span>
         </label>

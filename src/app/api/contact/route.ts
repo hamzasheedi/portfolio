@@ -37,7 +37,7 @@ function createTransporter() {
   });
 }
 
-/* ── HTML email — notification to FINWEB ───────────────── */
+/* ── HTML email — notification to MMQH ───────────────── */
 function buildNotificationEmail(data: {
   reference:   string;
   inquiryType: string;
@@ -74,7 +74,7 @@ function buildNotificationEmail(data: {
       <tr>
         <td style="background:#071d3b;padding:28px 32px;">
           <div style="font-size:18px;font-weight:900;color:#ffffff;letter-spacing:-0.03em;">
-            FINWEB<span style="color:#0b5bd3;">.</span>
+            MMQH<span style="color:#0b5bd3;">.</span>
           </div>
           <div style="font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px;">New Inquiry Notification</div>
         </td>
@@ -130,7 +130,7 @@ function buildNotificationEmail(data: {
       <tr>
         <td style="background:#f4f7fb;padding:20px 32px;border-top:1px solid #dbe2ea;">
           <div style="font-size:12px;color:#8496ab;text-align:center;">
-            This message was sent from the FINWEB SOLUTION contact form.
+            This message was sent from the MMQH SOLUTION contact form.
           </div>
         </td>
       </tr>
@@ -156,7 +156,7 @@ function buildAutoReplyEmail(name: string, reference: string): string {
       <tr>
         <td style="background:#071d3b;padding:28px 32px;">
           <div style="font-size:18px;font-weight:900;color:#ffffff;letter-spacing:-0.03em;">
-            FINWEB<span style="color:#0b5bd3;">.</span>
+            MMQH<span style="color:#0b5bd3;">.</span>
           </div>
           <div style="font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px;">Inquiry Confirmation</div>
         </td>
@@ -169,7 +169,7 @@ function buildAutoReplyEmail(name: string, reference: string): string {
             We've received your inquiry, ${name.split(" ")[0]}.
           </div>
           <p style="font-size:16px;color:#526070;line-height:1.75;margin:0 0 24px;">
-            Thank you for reaching out to FINWEB SOLUTION. Your message has been safely received and will be reviewed carefully.
+            Thank you for reaching out to MMQH SOLUTION. Your message has been safely received and will be reviewed carefully.
           </p>
           <p style="font-size:16px;color:#526070;line-height:1.75;margin:0 0 24px;">
             We typically respond within <strong style="color:#071d3b;">24 hours</strong> on business days. If your matter is urgent, please reply directly to this email.
@@ -184,7 +184,7 @@ function buildAutoReplyEmail(name: string, reference: string): string {
 
           <p style="font-size:15px;color:#526070;line-height:1.75;margin:0;">
             In the meantime, you can review our work at
-            <a href="https://finwebsolution.com/portfolio" style="color:#0b5bd3;font-weight:700;">finwebsolution.com/portfolio</a>.
+            <a href="https://MMQHsolution.com/portfolio" style="color:#0b5bd3;font-weight:700;">MMQHsolution.com/portfolio</a>.
           </p>
         </td>
       </tr>
@@ -193,7 +193,7 @@ function buildAutoReplyEmail(name: string, reference: string): string {
       <tr>
         <td style="background:#f4f7fb;padding:20px 32px;border-top:1px solid #dbe2ea;">
           <div style="font-size:12px;color:#8496ab;text-align:center;line-height:1.6;">
-            FINWEB SOLUTION · Financial Operations &amp; Digital Engineering<br/>
+            MMQH SOLUTION · Financial Operations &amp; Digital Engineering<br/>
             International · US · UK · EU
           </div>
         </td>
@@ -281,16 +281,16 @@ export async function POST(request: Request) {
   const userAgent   = request.headers.get("user-agent") ?? "unknown";
 
   const to   = process.env.CONTACT_TO   ?? "attackerv21@gmail.com";
-  const from = process.env.CONTACT_FROM ?? "FINWEB SOLUTION <noreply@finwebsolution.com>";
+  const from = process.env.CONTACT_FROM ?? "MMQH SOLUTION <noreply@MMQHsolution.com>";
 
   try {
     const transporter = createTransporter();
 
-    /* Notification email → FINWEB inbox */
+    /* Notification email → MMQH inbox */
     await transporter.sendMail({
       from,
       to,
-      subject: `[FINWEB] New Inquiry — ${data.inquiryType} — ${data.company} (${reference})`,
+      subject: `[MMQH] New Inquiry — ${data.inquiryType} — ${data.company} (${reference})`,
       html: buildNotificationEmail({
         reference,
         inquiryType:   data.inquiryType,
@@ -313,7 +313,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from,
       to:      data.email,
-      subject: `We've received your inquiry — FINWEB SOLUTION (${reference})`,
+      subject: `We've received your inquiry — MMQH SOLUTION (${reference})`,
       html:    buildAutoReplyEmail(data.name, reference),
     });
   } catch (err) {
@@ -326,7 +326,7 @@ export async function POST(request: Request) {
           code: "EMAIL_FAILED",
           message:
             "Your inquiry was received but we could not send a confirmation email. " +
-            "Please email us directly at hello@finwebsolution.com if you do not hear back.",
+            "Please email us directly at hello@MMQHsolution.com if you do not hear back.",
         },
       },
       { status: 500, headers: noStore }

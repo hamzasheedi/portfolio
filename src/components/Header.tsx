@@ -17,19 +17,19 @@ export function Header() {
 
   return (
     <header
-      className="finweb-header"
+      className="MMQH-header"
       data-scrolled={scrolled}
       data-menu-open={mobileOpen}
     >
-      <div className="finweb-header__inner">
-        <div className="finweb-header__brand-slot">
+      <div className="MMQH-header__inner">
+        <div className="MMQH-header__brand-slot">
           <Logo />
         </div>
         <Navigation
           pathname={pathname}
-          className="finweb-header__desktop-nav"
+          className="MMQH-header__desktop-nav"
         />
-        <div className="finweb-header__action-slot">
+        <div className="MMQH-header__action-slot">
           <CtaButton active={pathname === "/contact"} />
           <MobileMenu
             open={mobileOpen}

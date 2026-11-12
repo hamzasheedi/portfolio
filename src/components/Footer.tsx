@@ -8,7 +8,7 @@ export function Footer() {
           {/* Brand column */}
           <div>
             <div className="footer-brand">
-              FINWEB<span>.</span>
+              MMQH<span>.</span>
             </div>
             <p className="footer-tagline">
               Financial operations and digital architecture, engineered as one
@@ -34,15 +34,15 @@ export function Footer() {
             <nav className="footer-links" aria-label="Governance navigation">
               <Link href="/privacy/request">Privacy request</Link>
               <a href="#cookie-preferences">Cookie preferences</a>
-              <a href="mailto:privacy@finwebsolution.com">Privacy &amp; DPA</a>
-              <a href="mailto:legal@finwebsolution.com">Terms</a>
+              <a href="mailto:privacy@MMQHsolution.com">Privacy &amp; DPA</a>
+              <a href="mailto:legal@MMQHsolution.com">Terms</a>
             </nav>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="footer-bottom">
-          <span>© 2026 FINWEB SOLUTION</span>
+          <span>© 2026 MMQH SOLUTION</span>
           <span>International English · Serving US, UK and EU teams</span>
         </div>
       </div>

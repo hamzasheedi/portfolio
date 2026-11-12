@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────
-   HERO — FINWEB capability overview
+   HERO — MMQH capability overview
 ───────────────────────────────────────────── */
 function HeroVisual() {
   const capabilities = [
@@ -26,7 +26,7 @@ function HeroVisual() {
     <div className="hero-visual" aria-hidden="true">
       <div className="hero-card hero-card--accent">
         <div className="hero-card-header">
-          <span className="hero-card-label">FINWEB Overview</span>
+          <span className="hero-card-label">MMQH Overview</span>
           <span className="hero-card-badge hero-card-badge--blue">Integrated practice</span>
         </div>
         <div className="hero-card-value" style={{ fontSize: "1.5rem" }}>
@@ -122,7 +122,7 @@ export default function Home() {
               feel <em>clear.</em>
             </h1>
             <p>
-              FINWEB SOLUTION brings financial operations and digital
+              MMQH SOLUTION brings financial operations and digital
               architecture into one focused system for ambitious international
               businesses.
             </p>
@@ -161,23 +161,23 @@ export default function Home() {
         <div className="container">
           <div className="stats-strip-inner">
             <div className="stat-item">
-              <div className="stat-number">
-                30<span>s</span>
+              <div className="stat-number" style={{ fontSize: "var(--text-xl)" }}>
+                Rigour
               </div>
-              <div className="stat-label">to establish financial rigour</div>
+              <div className="stat-label">for dependable financial operations</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">
-                60<span>s</span>
+              <div className="stat-number" style={{ fontSize: "var(--text-xl)" }}>
+                Clarity
               </div>
-              <div className="stat-label">to see technical authority</div>
+              <div className="stat-label">across technical decisions and delivery</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">
-                1<span>×</span>
+              <div className="stat-number" style={{ fontSize: "var(--text-xl)" }}>
+                Momentum
               </div>
               <div className="stat-label">
-                system for decisions, delivery and growth
+                through connected systems for decisions and growth
               </div>
             </div>
           </div>
@@ -270,12 +270,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 4. WHY FINWEB ─────────────────────────── */}
+      {/* ── 4. WHY MMQH ─────────────────────────── */}
       <section className="section section--soft">
         <div className="container">
           <div className="section-header">
             <div>
-              <span className="eyebrow">Why FINWEB</span>
+              <span className="eyebrow">Why MMQH</span>
               <h2>Proof over promises.</h2>
             </div>
             <p>

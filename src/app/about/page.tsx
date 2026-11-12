@@ -13,7 +13,6 @@ import {
   FileText,
   Globe2,
   Layers,
-  LayoutDashboard,
   LineChart,
   Lock,
   MessageSquare,
@@ -27,87 +26,79 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "About — FINWEB SOLUTION",
+  title: "About — MMQH SOLUTION",
   description:
-    "FINWEB is an international consulting partner combining Financial Operations and Digital Engineering. Learn how we think, how we work, and why businesses trust us.",
+    "MMQH is an international consulting partner combining Financial Operations and Digital Engineering. Learn how we think, how we work, and why businesses trust us.",
 };
 
 /* ─────────────────────────────────────────────────────────────
-   HERO VISUAL — premium floating UI composition
+   HERO VISUAL — company identity composition
 ─────────────────────────────────────────────────────────────── */
 function AboutHeroVisual() {
   return (
     <div className="ab-hero-visual" aria-hidden="true">
 
-      {/* Top — financial reporting card */}
+      {/* Top — mission and vision */}
       <div className="ab-ui-card ab-ui-card--accent">
         <div className="ab-ui-card-top">
           <span className="ab-ui-label">
-            <BarChart3 size={12} /> Financial Reporting
+            <Target size={12} /> Mission &amp; Vision
           </span>
-          <span className="ab-ui-live">
-            <span className="ab-ui-dot" />
-            Active
-          </span>
+          <span className="ab-ui-live">MMQH</span>
         </div>
         <div className="ab-ui-rows">
-          {[
-            { label: "Revenue Forecast",  val: "$284k",  up: true  },
-            { label: "Expense Tracking",  val: "$91k",   up: false },
-            { label: "Profit Margin",     val: "67.9%",  up: true  },
-            { label: "Cash Position",     val: "$193k",  up: true  },
-          ].map((r) => (
-            <div key={r.label} className="ab-ui-row">
-              <span className="ab-ui-row-label">{r.label}</span>
-              <span className={`ab-ui-row-val${r.up ? " ab-up" : " ab-dn"}`}>
-                {r.val}
-              </span>
-            </div>
-          ))}
+          <div className="ab-ui-row">
+            <span className="ab-ui-row-label">Mission</span>
+            <span className="ab-ui-row-val">Clarity through connected systems</span>
+          </div>
+          <div className="ab-ui-row">
+            <span className="ab-ui-row-label">Vision</span>
+            <span className="ab-ui-row-val">Confident business decisions</span>
+          </div>
         </div>
       </div>
 
-      {/* Middle row — two small cards */}
+      {/* Middle row — core expertise */}
       <div className="ab-ui-pair">
         <div className="ab-ui-card ab-ui-card--sm">
           <div className="ab-ui-label">
-            <Bot size={12} /> AI Agent
+            <Calculator size={12} /> Core Expertise
           </div>
-          <div className="ab-ui-value">GPT-4o</div>
-          <div className="ab-ui-sub">MCP · Production</div>
+          <div className="ab-ui-value">Financial Operations</div>
+          <div className="ab-ui-sub">Reporting · controls · business process</div>
         </div>
         <div className="ab-ui-card ab-ui-card--sm ab-ui-card--dark">
           <div className="ab-ui-label ab-label-light">
-            <Code2 size={12} /> Engineering
+            <Code2 size={12} /> Core Expertise
           </div>
-          <div className="ab-ui-value ab-val-light">FastAPI</div>
-          <div className="ab-ui-sub ab-sub-light">Python · Secure</div>
+          <div className="ab-ui-value ab-val-light">Digital Engineering</div>
+          <div className="ab-ui-sub ab-sub-light">Secure, maintainable systems</div>
         </div>
       </div>
 
-      {/* Bottom — architecture diagram card */}
+      {/* Bottom — professional identity */}
       <div className="ab-ui-card">
         <div className="ab-ui-label">
-          <Layers size={12} /> System Architecture
+          <Globe2 size={12} /> Professional Identity
         </div>
         <div className="ab-ui-arch">
           <div className="ab-ui-arch-node ab-node-blue">
-            <LayoutDashboard size={14} />
-            <span>Financial Layer</span>
+            <Shield size={14} />
+            <span>International Standards</span>
           </div>
           <div className="ab-ui-arch-arrow">
             <ChevronRight size={14} />
           </div>
           <div className="ab-ui-arch-node ab-node-navy">
-            <Brain size={14} />
-            <span>AI Engine</span>
+            <Layers size={14} />
+            <span>Business Process</span>
           </div>
           <div className="ab-ui-arch-arrow">
             <ChevronRight size={14} />
           </div>
           <div className="ab-ui-arch-node ab-node-blue">
-            <TrendingUp size={14} />
-            <span>Insights</span>
+            <Users size={14} />
+            <span>Professional Values</span>
           </div>
         </div>
       </div>
@@ -127,13 +118,13 @@ function HeroSection() {
 
           {/* Left — copy */}
           <div className="ab-hero-copy">
-            <span className="eyebrow">About FINWEB</span>
+            <span className="eyebrow">About MMQH</span>
             <h1>
               Serious about the work.<br />
               <em>Human about the way.</em>
             </h1>
             <p>
-              FINWEB is an international consulting partner built around two
+              MMQH is an international consulting partner built around two
               disciplines that belong together — Financial Operations and Digital
               Engineering. We exist to give businesses the clarity and systems
               they need to make confident decisions.
@@ -171,11 +162,11 @@ function HeroSection() {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   SECTION 2 — WHY FINWEB EXISTS
+   SECTION 2 — WHY MMQH EXISTS
 ─────────────────────────────────────────────────────────────── */
 function WhyExistsSection() {
   return (
-    <section className="section section--sm" id="why-finweb">
+    <section className="section section--sm" id="why-MMQH">
       <div className="container">
         <div className="ab-why-grid">
 
@@ -195,7 +186,7 @@ function WhyExistsSection() {
               waiting for clarity that never arrives.
             </p>
             <p>
-              FINWEB was built to close that gap — not by adding more tools, but
+              MMQH was built to close that gap — not by adding more tools, but
               by connecting the financial and engineering layers that every
               growing business depends on.
             </p>
@@ -207,7 +198,7 @@ function WhyExistsSection() {
           {/* Right — problem / solution visual */}
           <div className="ab-why-visual" aria-hidden="true">
             <div className="ab-why-before">
-              <div className="ab-why-block-label ab-label-muted">Before FINWEB</div>
+              <div className="ab-why-block-label ab-label-muted">Before MMQH</div>
               <div className="ab-why-block ab-block-disconnected">
                 <div className="ab-why-pill ab-pill-grey">
                   <Calculator size={14} /> Financial Systems
@@ -222,7 +213,7 @@ function WhyExistsSection() {
               <p className="ab-why-caption">Decisions made without full visibility</p>
             </div>
             <div className="ab-why-after">
-              <div className="ab-why-block-label ab-label-blue">With FINWEB</div>
+              <div className="ab-why-block-label ab-label-blue">With MMQH</div>
               <div className="ab-why-block ab-block-connected">
                 <div className="ab-why-pill ab-pill-blue">
                   <Calculator size={14} /> Financial Operations
@@ -253,7 +244,7 @@ function TwoEnginesSection() {
     <section className="section section--soft" id="two-engines">
       <div className="container">
         <div className="ab-engines-header">
-          <span className="eyebrow">How FINWEB Is Structured</span>
+          <span className="eyebrow">How MMQH Is Structured</span>
           <h2>Two specialist engines. One integrated partner.</h2>
           <p>
             Each discipline is developed to a specialist standard. Together,
@@ -356,7 +347,7 @@ function InternationalSection() {
             <span className="eyebrow">International by Default</span>
             <h2>No regional theatre. Just relevant, precise work.</h2>
             <p>
-              FINWEB operates without geographical limits. The work is designed
+              MMQH operates without geographical limits. The work is designed
               for businesses operating in the US, UK, and EU — with
               documentation, communication, and delivery standards that hold up
               in any professional environment.
@@ -477,7 +468,7 @@ const operatingPrinciples = [
           <div className="ab-oprin-doc-bar ab-bar-sm" />
           <div className="ab-oprin-doc-bar" />
           <div className="ab-oprin-doc-check">
-            <CheckCircle2 size={18} /> Verified
+            <CheckCircle2 size={18} /> Evidence-led
           </div>
         </div>
       </div>
@@ -704,10 +695,10 @@ function WhoWeWorkWithSection() {
     <section className="section" id="who-we-work-with">
       <div className="container">
         <div className="ab-section-header ab-section-header--center">
-          <span className="eyebrow">Where FINWEB Creates Value</span>
+          <span className="eyebrow">Where MMQH Creates Value</span>
           <h2>Who we work with.</h2>
           <p>
-            FINWEB is not for everyone. We work best with organisations that
+            MMQH is not for everyone. We work best with organisations that
             value clarity over speed, and systems over shortcuts.
           </p>
         </div>
